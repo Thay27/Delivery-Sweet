@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #FED6F9">
+    <img class="imgL" src="assets/img/logo.png" />
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse text-body" id="navbarNavDropdown" style="">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active" style="font-family: 'Pristina'; font-size: 30px; margin-left: 70px;">
+        <a class="nav-link mr-3" style="color: black" [routerLink]="['/dashboard']">Home<span class="sr-only">(Página atual)</span></a>
+      </li>
+      <li class="nav-item mr-3 " style="font-family: 'Pristina'; font-size: 30px;">
+        <a class="nav-link"  style="color: black" [routerLink]="['/categorias']">Categorias</a>
+      </li>
+      <li class="nav-item mr-3" style="font-family: 'Pristina'; font-size: 30px; ">
+        <a class="nav-link" style="color: black" [routerLink]="['/bolos-montagem']">Categorias de montagem</a>
+      </li>
+      <li class="nav-item mr-3" style="font-family: 'Pristina'; font-size: 30px;">
+        <a class="nav-link" style="color: black" [routerLink]="['/bolos']">Itens de montagem</a>
+      </li>
+      <li class="nav-item mr-3" style="font-family: 'Pristina'; font-size: 30px;">
+        <a class="nav-link" style="color: black" [routerLink]="['/produtos']">Produtos</a>
+      </li>
+      <li class="nav-item dropdown" style="font-family: 'Pristina'; font-size: 30px; ">
+        <a class="nav-link dropdown-toggle" style="color: black" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Pedidos
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Em preparação</a>
+          <a class="dropdown-item" href="#">Saiu pra entrega</a>
+          <a class="dropdown-item" href="#">Entregue</a>
+        </div>
+      </li>
+    </ul>
+    <span class="navbar-text mr-2">
+      Bem vindo, <!--{{usuario.nome}}-->
+    </span>
+    <span class="navbar-text">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <!-- <i class="fas fa-user" *ngIf="!usuario.img" ></i> -->
+          <!-- <img [src]="usuario.img" *ngIf="usuario.img" width="20" /> -->
+        </button>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+          <!-- <a class="dropdown-item text-dark" [routerLink]="['/usuario/perfil']">Perfil do usuário</a> -->
+          <!-- <a class="dropdown-item text-dark" [routerLink]="['/usuario/enderecos']">Meus endereçoes</a> -->
+          <button class="btn btn-link dropdown-item text-dark" (click)="sair()">Sair</button>
+        </div>
+      </div>
+    </span>
+  </div>
+</nav>

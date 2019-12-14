@@ -1,0 +1,36 @@
+<br>
+<h3>Itens</h3>
+<hr>
+<div class="card">
+  <div class="card-header text-right">
+    <a class="btn btn-primary" role="button" [routerLink]="['/bolos/novo']">Novo item</a>
+  </div>
+  <div class="card-body">
+    <table class="table grid">
+      <thead>
+        <tr>
+          <!-- <th scope="col">#</th> -->
+          <th scope="col">Nome</th>
+          <th scope="col">Preço</th>
+          <th scope="col">Categoria</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of itens | async">
+          <!-- <th scope="row">{{produto.key}}</th> -->
+          <td>{{ item.nome }}</td>
+          <td>{{ item.preco | currency:"BRL" }}</td>
+          <td>{{ item.montagemNome }}</td>
+          <td class="edit">
+            <a class="btn btn-warning text-white" role="button" [routerLink]="['/bolos/editar', item.key]"><i class="far fa-edit"></i></a>
+          </td>
+          <td class="delete">
+            <button class="btn btn-danger" (click)="remover(item.key, item.filePath)"><i class="far fa-trash-alt"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
